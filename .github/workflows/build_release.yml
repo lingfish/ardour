@@ -35,7 +35,7 @@ jobs:
           libpango1.0-dev libsamplerate0-dev libserd-dev libsord-dev libsratom-dev libsuil-dev \
           libtag1-dev libxml2-dev lv2-dev qtbase5-dev \
           libarchive-dev libwebsockets-dev libssl-dev vamp-plugin-sdk librubberband-dev libusb-1.0-0-dev \
-          makeself
+          makeself chrpath
 
     - name: Build Ardour (release)
       run: |
@@ -53,4 +53,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ardour-release-build
-        path: tools/linux_packaging/install.sh
+        path: |
+          tools/linux_packaging/install.sh
+          *.run
