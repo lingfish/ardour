@@ -32,7 +32,7 @@ jobs:
           liblo-dev liblrdf-dev libglibmm-2.4-dev libcairo2-dev \
           libsigc++-2.0-dev libasound2-dev libjack-jackd2-dev \
           libaubio-dev libfftw3-dev libtag1-dev libcurl4-openssl-dev \
-          libarchive-dev python3 intltool pkg-config git
+          libarchive-dev python3 intltool pkg-config git vamp-plugin-sdk
 
     - name: Build Ardour (release)
       run: |
