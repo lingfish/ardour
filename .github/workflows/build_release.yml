@@ -34,7 +34,7 @@ jobs:
           libgtkmm-2.4-dev libjack-jackd2-dev liblo-dev liblrdf-dev liblilv-dev libogg-dev \
           libpango1.0-dev libsamplerate0-dev libserd-dev libsord-dev libsratom-dev libsuil-dev \
           libtag1-dev libxml2-dev lv2-dev qtbase5-dev \
-          libarchive-dev libwebsockets-dev libssl-dev vamp-plugin-sdk librubberband-dev
+          libarchive-dev libwebsockets-dev libssl-dev vamp-plugin-sdk librubberband-dev libusb-1.0-0-dev
 
     - name: Build Ardour (release)
       run: |
