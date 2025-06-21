@@ -34,15 +34,23 @@ jobs:
           libgtkmm-2.4-dev libjack-jackd2-dev liblo-dev liblrdf-dev liblilv-dev libogg-dev \
           libpango1.0-dev libsamplerate0-dev libserd-dev libsord-dev libsratom-dev libsuil-dev \
           libtag1-dev libxml2-dev lv2-dev qtbase5-dev \
-          libarchive-dev libwebsockets-dev libssl-dev vamp-plugin-sdk librubberband-dev libusb-1.0-0-dev
+          libarchive-dev libwebsockets-dev libssl-dev vamp-plugin-sdk librubberband-dev libusb-1.0-0-dev \
+          makeself
 
     - name: Build Ardour (release)
       run: |
         ./waf configure --optimize
         ./waf
 
+    - name: Create application binary
+      run: |
+        cd tools/linux_packaging
+        ./build --public --strip some
+        ./package --public --singlearch
+        tree
+        
     - name: Upload release binary
       uses: actions/upload-artifact@v4
       with:
         name: ardour-release-build
-        path: build/gtk2/ardour-*
+        path: tools/linux_packaging/install.sh
